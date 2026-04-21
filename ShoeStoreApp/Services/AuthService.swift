@@ -82,6 +82,38 @@ class AuthService: ObservableObject {
                 }
             }
     }
+
+    func mfaLogin(completion: @escaping (Result<Void, Error>) -> Void) {
+        Auth0
+            .webAuth()
+            .scope("openid profile email offline_access")
+            .audience("https://\(Auth0Plist.config?.domain ?? "")/userinfo")
+            .parameters([
+                "acr_values": "http://schemas.openid.net/pap/policies/2007/06/multi-factor",
+                "prompt": "none"
+            ])
+            .start { result in
+                switch result {
+                case .success(let credentials):
+                    self.isAuthenticated = true
+                    self.idToken = credentials.idToken
+                    self.accessToken = credentials.accessToken
+                    self.refreshToken = credentials.refreshToken
+
+                    // Store credentials
+                    _ = self.credentialsManager.store(credentials: credentials)
+
+                    // Fetch user profile
+                    self.fetchUserProfile(accessToken: credentials.accessToken)
+
+                    completion(.success(()))
+
+                case .failure(let error):
+                    print("Failed to login with MFA: \(error)")
+                    completion(.failure(error))
+                }
+            }
+    }
     
     
     

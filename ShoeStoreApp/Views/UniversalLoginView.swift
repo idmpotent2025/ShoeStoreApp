@@ -14,51 +14,6 @@ struct UniversalLoginView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
-                    // Features
-                    if !viewModel.isAuthenticated {
-                        VStack(spacing: 16) {
-                            FeatureCard(
-                                icon: "globe",
-                                title: "Hosted Login Flow",
-                                description: "Centralized authentication UI maintained by Auth0",
-                                isLoading: viewModel.isLoading,
-                                action: {
-                                    viewModel.startUniversalLogin()
-                                }
-                            )
-
-                            FeatureCard(
-                                icon: "person.2.fill",
-                                title: "Hosted Social Flow",
-                                description: "Support for Google, Facebook, Apple, and more",
-                                isLoading: viewModel.isLoading,
-                                action: {
-                                    viewModel.startSocialULogin()
-                                }
-                            )
-
-                            FeatureCard(
-                                icon: "shield.checkerboard",
-                                title: "Hosted MFA Auth Flow",
-                                description: "Built-in MFA with SMS, email, and authenticator apps",
-                                isLoading: viewModel.isLoading,
-                                action: {
-                                    viewModel.startUniversalLogin()
-                                }
-                            )
-
-                            FeatureCard(
-                                icon: "paintbrush.fill",
-                                title: "Customizable",
-                                description: "Brand your login page to match your application",
-                                isLoading: viewModel.isLoading,
-                                action: {
-                                    viewModel.startUniversalLogin()
-                                }
-                            )
-                        }
-                    }
-
                     // Success/Logout Section
                     if viewModel.isAuthenticated {
                         VStack(spacing: 16) {
@@ -88,6 +43,47 @@ struct UniversalLoginView: View {
                                 .cornerRadius(12)
                             }
                         }
+                    }
+
+                    // Features
+                    if !viewModel.isAuthenticated {
+                        VStack(spacing: 16) {
+                            FeatureCard(
+                                icon: "globe",
+                                title: "Hosted Login Flow",
+                                description: "Centralized authentication UI maintained by Auth0",
+                                isLoading: viewModel.isLoading,
+                                action: {
+                                    viewModel.startUniversalLogin()
+                                }
+                            )
+
+                            FeatureCard(
+                                icon: "person.2.fill",
+                                title: "Hosted Social Flow",
+                                description: "Support for Google, Facebook, Apple, and more",
+                                isLoading: viewModel.isLoading,
+                                action: {
+                                    viewModel.startSocialULogin()
+                                }
+                            )
+
+                        }
+                    }
+
+                    // MFA Card - Always visible for testing step-up authentication
+                    VStack(spacing: 16) {
+                        FeatureCard(
+                            icon: "shield.checkerboard",
+                            title: "Hosted MFA Auth Flow",
+                            description: viewModel.isAuthenticated
+                                ? "Test step-up MFA authentication with existing session"
+                                : "Built-in MFA with SMS, email, and authenticator apps",
+                            isLoading: viewModel.isLoading,
+                            action: {
+                                viewModel.startMFALogin()
+                            }
+                        )
                     }
 
                     // Error Message
