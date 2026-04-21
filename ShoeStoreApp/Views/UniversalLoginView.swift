@@ -19,7 +19,7 @@ struct UniversalLoginView: View {
                         VStack(spacing: 16) {
                             FeatureCard(
                                 icon: "globe",
-                                title: "Hosted Login Page",
+                                title: "Hosted Login Flow",
                                 description: "Centralized authentication UI maintained by Auth0",
                                 isLoading: viewModel.isLoading,
                                 action: {
@@ -29,17 +29,17 @@ struct UniversalLoginView: View {
 
                             FeatureCard(
                                 icon: "person.2.fill",
-                                title: "Social Connections",
+                                title: "Hosted Social Flow",
                                 description: "Support for Google, Facebook, Apple, and more",
                                 isLoading: viewModel.isLoading,
                                 action: {
-                                    viewModel.startUniversalLogin()
+                                    viewModel.startSocialULogin()
                                 }
                             )
 
                             FeatureCard(
                                 icon: "shield.checkerboard",
-                                title: "Multi-Factor Auth",
+                                title: "Hosted MFA Auth Flow",
                                 description: "Built-in MFA with SMS, email, and authenticator apps",
                                 isLoading: viewModel.isLoading,
                                 action: {
@@ -108,7 +108,7 @@ struct UniversalLoginView: View {
             }
             .background(Color.theme.background.ignoresSafeArea())
             .navigationTitle("Universal Login")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -156,7 +156,7 @@ struct FeatureCard: View {
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.white)
+            .background(Color(hex: "#E8E8E8"))
             .cornerRadius(12)
             .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
         }

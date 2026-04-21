@@ -47,8 +47,12 @@ struct ShopCartView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
-                        .background(selectedTab == .products ? Color(hex: "#E8E8E8") : Color.clear)
-                        .foregroundColor(selectedTab == .products ? .theme.accent : Color(hex: "#C0C0C0"))
+                        .background(selectedTab == .products ? Color(hex: "#707070") : Color(hex: "#B0B0B0"))
+                        .foregroundColor(selectedTab == .products ? .white : Color(hex: "#5A5A5A"))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(selectedTab == .products ? Color.theme.accent : Color.gray.opacity(0.3), lineWidth: 1)
+                        )
                     }
 
                     // Cart Tab
@@ -75,8 +79,12 @@ struct ShopCartView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
-                        .background(selectedTab == .cart ? Color(hex: "#E8E8E8") : Color.clear)
-                        .foregroundColor(selectedTab == .cart ? .theme.accent : Color(hex: "#C0C0C0"))
+                        .background(selectedTab == .cart ? Color(hex: "#707070") : Color(hex: "#B0B0B0"))
+                        .foregroundColor(selectedTab == .cart ? .white : Color(hex: "#5A5A5A"))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(selectedTab == .cart ? Color.theme.accent : Color.gray.opacity(0.3), lineWidth: 1)
+                        )
                     }
                 }
                 .background(Color.gray.opacity(0.1))

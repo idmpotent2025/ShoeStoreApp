@@ -174,7 +174,7 @@ struct TokensView: View {
                 }
             }
             .navigationTitle("Tokens")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

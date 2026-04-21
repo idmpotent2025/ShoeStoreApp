@@ -21,8 +21,9 @@ class AuthService: ObservableObject {
     init() {
         self.credentialsManager = CredentialsManager(authentication: Auth0.authentication())
 
-        // Check if user has stored credentials
-        self.checkStoredCredentials()
+        // Clear any stored credentials on init to ensure fresh start
+        _ = self.credentialsManager.clear()
+        self.isAuthenticated = false
     }
 
     func login(completion: @escaping (Result<Void, Error>) -> Void) {
@@ -53,6 +54,37 @@ class AuthService: ObservableObject {
             }
     }
 
+    func socialLogin(completion: @escaping (Result<Void, Error>) -> Void) {
+        Auth0
+            .webAuth()
+            .scope("openid profile email offline_access")
+            .connection("google-oauth2")
+            .audience("https://\(Auth0Plist.config?.domain ?? "")/userinfo")
+            .start { result in
+                switch result {
+                case .success(let credentials):
+                    self.isAuthenticated = true
+                    self.idToken = credentials.idToken
+                    self.accessToken = credentials.accessToken
+                    self.refreshToken = credentials.refreshToken
+
+                    // Store credentials
+                    _ = self.credentialsManager.store(credentials: credentials)
+
+                    // Fetch user profile
+                    self.fetchUserProfile(accessToken: credentials.accessToken)
+
+                    completion(.success(()))
+
+                case .failure(let error):
+                    print("Failed to login: \(error)")
+                    completion(.failure(error))
+                }
+            }
+    }
+    
+    
+    
     func logout() {
         Auth0
             .webAuth()

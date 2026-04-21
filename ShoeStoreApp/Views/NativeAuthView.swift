@@ -22,13 +22,13 @@ struct NativeAuthView: View {
                         VStack(spacing: 16) {
                             HStack {
                                 Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.green)
+                                    .foregroundColor(Color(hex: "#FFD700"))
                                 Text("Successfully authenticated!")
                                     .font(.headline)
-                                    .foregroundColor(.green)
+                                    .foregroundColor(Color(hex: "#FFD700"))
                             }
                             .padding()
-                            .background(Color.green.opacity(0.1))
+                            .background(Color(hex: "#FFD700").opacity(0.2))
                             .cornerRadius(12)
 
                             if let email = currentEmail {
@@ -111,26 +111,12 @@ struct NativeAuthView: View {
                         .background(Color.red.opacity(0.1))
                         .cornerRadius(8)
                     }
-
-                    // Success Messages
-                    if let successMessage = currentSuccessMessage {
-                        HStack {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.green)
-                            Text(successMessage)
-                                .font(.subheadline)
-                                .foregroundColor(.green)
-                        }
-                        .padding()
-                        .background(Color.green.opacity(0.1))
-                        .cornerRadius(8)
-                    }
                 }
                 .padding()
             }
             .background(Color.theme.background.ignoresSafeArea())
             .navigationTitle("Native Auth")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 

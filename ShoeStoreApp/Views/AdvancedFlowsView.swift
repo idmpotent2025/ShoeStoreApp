@@ -54,7 +54,7 @@ struct AdvancedFlowsView: View {
             }
             .background(Color.theme.background.ignoresSafeArea())
             .navigationTitle("Advanced")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showQRCodeSheet) {
                 QRCodeLoginSheet(viewModel: viewModel)
             }
@@ -102,7 +102,7 @@ struct WorkflowCard: View {
             }
             .padding()
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.white)
+            .background(Color(hex: "#E8E8E8"))
             .cornerRadius(12)
             .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
         }
@@ -132,7 +132,7 @@ struct QRCodeLoginSheet: View {
                                     .interpolation(.none)
                                     .resizable()
                                     .frame(width: 250, height: 250)
-                                    .background(Color.white)
+                                    .background(Color(hex: "#E8E8E8"))
                                     .cornerRadius(12)
                             }
 
@@ -241,7 +241,7 @@ struct CIBAFlowSheet: View {
                                 InfoRow(label: "Status", value: cibaFlow.statusDescription)
                             }
                             .padding()
-                            .background(Color.white)
+                            .background(Color(hex: "#E8E8E8"))
                             .cornerRadius(12)
 
                             if cibaFlow.status == .notified {
@@ -362,7 +362,7 @@ struct Native2WebSSOSheet: View {
                                 InfoRow(label: "Status", value: ssoSession.isActive ? "Active" : "Inactive")
                             }
                             .padding()
-                            .background(Color.white)
+                            .background(Color(hex: "#E8E8E8"))
                             .cornerRadius(12)
 
                             if ssoSession.isActive {

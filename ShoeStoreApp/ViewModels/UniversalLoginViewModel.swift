@@ -46,6 +46,29 @@ class UniversalLoginViewModel: ObservableObject {
             }
         }
     }
+    
+    
+    func startSocialULogin() {
+        isLoading = true
+        errorMessage = nil
+
+        authService.socialLogin { [weak self] result in
+            DispatchQueue.main.async {
+                self?.isLoading = false
+
+                switch result {
+                case .success:
+                    self?.showSuccess = true
+                    self?.isAuthenticated = true
+                case .failure(let error):
+                    self?.errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
+    
+    
+    
 
     func logout() {
         authService.logout()
