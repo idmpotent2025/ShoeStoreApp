@@ -8,13 +8,22 @@
 import Foundation
 
 enum ProductCategory: String, Codable, CaseIterable {
-    case dresses = "Dresses"
-    case petFood = "Pet Food"
-    case burritos = "Burritos"
-    case cpgGoods = "CPG Goods"
+    case dresses
+    case petFood
+    case burritos
+    case cpgGoods
 
     var displayName: String {
-        return self.rawValue
+        switch self {
+        case .dresses:
+            return "Dresses"
+        case .petFood:
+            return "Pet Food"
+        case .burritos:
+            return "Burritos"
+        case .cpgGoods:
+            return "CPG Goods"
+        }
     }
 }
 

@@ -23,11 +23,11 @@ extension Color {
                     text: Color(hex: "#1A1A1A")
                 )
             } else {
-                // Fallback to Nordstrom theme if config fails to load
+                // Fallback to teal theme if config fails to load
                 return Theme(
                     primary: Color(hex: "#003057"),
                     accent: Color(hex: "#0055A6"),
-                    background: Color(hex: "#F7F7F7"),
+                    background: Color(hex: "#3A7D7D"),
                     text: Color(hex: "#1A1A1A")
                 )
             }

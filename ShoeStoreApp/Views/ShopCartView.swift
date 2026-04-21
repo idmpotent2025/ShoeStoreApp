@@ -11,23 +11,89 @@ struct ShopCartView: View {
     @StateObject private var shopViewModel = ShopViewModel()
     @EnvironmentObject var cartViewModel: CartViewModel
 
-    @State private var isProductsExpanded = true
-    @State private var isCartExpanded = false
+    @State private var selectedTab: ShopTab = .products
+
+    enum ShopTab {
+        case products
+        case cart
+    }
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(spacing: 0) {
-                    // Products Section
-                    AccordionSection(
-                        title: "Products",
-                        badge: "\(shopViewModel.filteredProducts.count)",
-                        isExpanded: $isProductsExpanded
-                    ) {
+            VStack(spacing: 0) {
+                // Custom Tab Bar
+                HStack(spacing: 0) {
+                    // Products Tab
+                    Button(action: {
+                        withAnimation {
+                            selectedTab = .products
+                        }
+                    }) {
+                        HStack {
+                            Text("Products")
+                                .font(.subheadline)
+                                .fontWeight(selectedTab == .products ? .semibold : .regular)
+
+                            if shopViewModel.filteredProducts.count > 0 {
+                                Text("\(shopViewModel.filteredProducts.count)")
+                                    .font(.caption2)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 6)
+                                    .padding(.vertical, 2)
+                                    .background(Color.theme.accent)
+                                    .cornerRadius(8)
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(selectedTab == .products ? Color(hex: "#E8E8E8") : Color.clear)
+                        .foregroundColor(selectedTab == .products ? .theme.accent : Color(hex: "#C0C0C0"))
+                    }
+
+                    // Cart Tab
+                    Button(action: {
+                        withAnimation {
+                            selectedTab = .cart
+                        }
+                    }) {
+                        HStack {
+                            Text("Cart")
+                                .font(.subheadline)
+                                .fontWeight(selectedTab == .cart ? .semibold : .regular)
+
+                            if cartViewModel.totalItems > 0 {
+                                Text("\(cartViewModel.totalItems)")
+                                    .font(.caption2)
+                                    .fontWeight(.semibold)
+                                    .foregroundColor(.white)
+                                    .padding(.horizontal, 6)
+                                    .padding(.vertical, 2)
+                                    .background(Color.theme.accent)
+                                    .cornerRadius(8)
+                            }
+                        }
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(selectedTab == .cart ? Color(hex: "#E8E8E8") : Color.clear)
+                        .foregroundColor(selectedTab == .cart ? .theme.accent : Color(hex: "#C0C0C0"))
+                    }
+                }
+                .background(Color.gray.opacity(0.1))
+                .cornerRadius(8)
+                .padding(.horizontal)
+                .padding(.top, 8)
+
+                Divider()
+
+                // Content based on selected tab
+                ScrollView {
+                    if selectedTab == .products {
                         VStack(spacing: 16) {
                             // Category Filter
                             CategoryFilterView(selectedCategory: $shopViewModel.selectedCategory)
                                 .padding(.horizontal)
+                                .padding(.top, 8)
 
                             // Products Grid
                             LazyVGrid(columns: [
@@ -43,20 +109,13 @@ struct ShopCartView: View {
                             .padding(.horizontal)
                         }
                         .padding(.vertical)
-                    }
-
-                    // Cart Section
-                    AccordionSection(
-                        title: "Cart",
-                        badge: "\(cartViewModel.totalItems)",
-                        isExpanded: $isCartExpanded
-                    ) {
-                        Group {
-                            if cartViewModel.cartItems.isEmpty {
-                                EmptyCartView()
-                                    .padding()
-                            } else {
-                                VStack(spacing: 16) {
+                    } else {
+                        // Cart Content
+                        if cartViewModel.cartItems.isEmpty {
+                            EmptyCartView()
+                                .padding()
+                        } else {
+                            VStack(spacing: 16) {
                                 // Cart Items
                                 ForEach(cartViewModel.cartItems) { item in
                                     ShopCartItemRow(item: item, cartViewModel: cartViewModel)
@@ -104,74 +163,17 @@ struct ShopCartView: View {
                                     }
                                     .padding(.top)
                                 }
-                                }
-                                .padding()
                             }
+                            .padding()
                         }
                     }
                 }
             }
-            .navigationTitle("Shop")
-            .navigationBarTitleDisplayMode(.large)
+            .navigationBarHidden(true)
             .background(Color.theme.background.ignoresSafeArea())
         }
         .onAppear {
             shopViewModel.loadProducts()
-        }
-    }
-}
-
-// MARK: - Accordion Section
-
-struct AccordionSection<Content: View>: View {
-    let title: String
-    let badge: String
-    @Binding var isExpanded: Bool
-    let content: () -> Content
-
-    var body: some View {
-        VStack(spacing: 0) {
-            // Header
-            Button(action: {
-                withAnimation(.spring(response: 0.3, dampingFraction: 0.7)) {
-                    isExpanded.toggle()
-                }
-            }) {
-                HStack {
-                    Text(title)
-                        .font(.title2)
-                        .fontWeight(.bold)
-                        .foregroundColor(.theme.text)
-
-                    if !badge.isEmpty && badge != "0" {
-                        Text(badge)
-                            .font(.caption)
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 8)
-                            .padding(.vertical, 4)
-                            .background(Color.theme.accent)
-                            .cornerRadius(10)
-                    }
-
-                    Spacer()
-
-                    Image(systemName: isExpanded ? "chevron.up" : "chevron.down")
-                        .foregroundColor(.theme.accent)
-                        .font(.system(size: 14, weight: .semibold))
-                }
-                .padding()
-                .background(Color.white)
-            }
-            .buttonStyle(PlainButtonStyle())
-
-            // Content
-            if isExpanded {
-                content()
-                    .transition(.opacity.combined(with: .move(edge: .top)))
-            }
-
-            Divider()
         }
     }
 }
@@ -183,7 +185,7 @@ struct CategoryFilterView: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 12) {
+            HStack(spacing: 8) {
                 ForEach(ProductCategory.allCases, id: \.self) { category in
                     Button(action: {
                         withAnimation {
@@ -191,21 +193,21 @@ struct CategoryFilterView: View {
                         }
                     }) {
                         Text(category.displayName)
-                            .font(.subheadline)
+                            .font(.caption)
                             .fontWeight(.medium)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 6)
                             .background(
                                 selectedCategory == category
                                     ? Color.theme.accent
-                                    : Color.gray.opacity(0.15)
+                                    : Color.gray.opacity(0.1)
                             )
                             .foregroundColor(
                                 selectedCategory == category
                                     ? .white
-                                    : .theme.text
+                                    : .gray
                             )
-                            .cornerRadius(20)
+                            .cornerRadius(16)
                     }
                 }
             }
@@ -222,15 +224,16 @@ struct ProductCard: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             // Product Image
-            ZStack {
-                RoundedRectangle(cornerRadius: 12)
-                    .fill(Color.gray.opacity(0.1))
-                    .aspectRatio(1, contentMode: .fit)
-
-                Image(systemName: "bag.fill")
-                    .font(.system(size: 40))
-                    .foregroundColor(.theme.primary.opacity(0.3))
-            }
+            Image(product.imageUrl)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(height: 140)
+                .clipped()
+                .cornerRadius(12)
+                .background(
+                    RoundedRectangle(cornerRadius: 12)
+                        .fill(Color.gray.opacity(0.1))
+                )
 
             // Product Info
             VStack(alignment: .leading, spacing: 4) {
@@ -261,7 +264,7 @@ struct ProductCard: View {
             }
         }
         .padding(12)
-        .background(Color.white)
+        .background(Color(hex: "#E8E8E8"))
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.08), radius: 8, x: 0, y: 2)
     }
@@ -333,7 +336,7 @@ struct ShopCartItemRow: View {
             }
         }
         .padding()
-        .background(Color.white)
+        .background(Color(hex: "#E8E8E8"))
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.05), radius: 4, x: 0, y: 2)
     }

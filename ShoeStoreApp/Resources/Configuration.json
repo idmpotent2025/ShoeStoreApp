@@ -3,7 +3,7 @@
     "name": "Identity Architect Demo",
     "primaryColor": "#003057",
     "accentColor": "#0055A6",
-    "backgroundColor": "#F7F7F7"
+    "backgroundColor": "#3A7D7D"
   },
   "categories": {
     "Dresses": [
@@ -53,38 +53,6 @@
         "price": 69.99,
         "description": "Free-spirited design with flowing silhouette",
         "imageUrl": "dress6",
-        "category": "dresses"
-      },
-      {
-        "id": "dress7",
-        "name": "Little Black Dress",
-        "price": 149.99,
-        "description": "Timeless wardrobe staple for any occasion",
-        "imageUrl": "dress7",
-        "category": "dresses"
-      },
-      {
-        "id": "dress8",
-        "name": "Wrap Midi Dress",
-        "price": 99.99,
-        "description": "Flattering wrap design with adjustable fit",
-        "imageUrl": "dress8",
-        "category": "dresses"
-      },
-      {
-        "id": "dress9",
-        "name": "Printed Shift Dress",
-        "price": 84.99,
-        "description": "Modern geometric patterns on classic silhouette",
-        "imageUrl": "dress9",
-        "category": "dresses"
-      },
-      {
-        "id": "dress10",
-        "name": "Off-Shoulder Dress",
-        "price": 109.99,
-        "description": "Romantic off-shoulder design for special events",
-        "imageUrl": "dress10",
         "category": "dresses"
       }
     ],
@@ -136,119 +104,55 @@
         "description": "Crunchy treats that promote dental hygiene",
         "imageUrl": "petfood6",
         "category": "petFood"
-      },
-      {
-        "id": "petfood7",
-        "name": "Weight Management Cat Food",
-        "price": 42.99,
-        "description": "Low-calorie formula for weight control",
-        "imageUrl": "petfood7",
-        "category": "petFood"
-      },
-      {
-        "id": "petfood8",
-        "name": "Salmon & Rice Dog Food",
-        "price": 47.99,
-        "description": "Rich in omega-3 fatty acids and wholesome grains",
-        "imageUrl": "petfood8",
-        "category": "petFood"
-      },
-      {
-        "id": "petfood9",
-        "name": "Kitten Growth Formula",
-        "price": 36.99,
-        "description": "Essential nutrients for developing kittens",
-        "imageUrl": "petfood9",
-        "category": "petFood"
-      },
-      {
-        "id": "petfood10",
-        "name": "Active Dog Performance",
-        "price": 59.99,
-        "description": "High-energy formula for active and working dogs",
-        "imageUrl": "petfood10",
-        "category": "petFood"
       }
     ],
     "Burritos": [
       {
-        "id": "burrito1",
-        "name": "Classic Chicken Burrito",
+        "id": "burrito",
+        "name": "California Burrito",
         "price": 12.99,
         "description": "Grilled chicken with rice, beans, and fresh salsa",
-        "imageUrl": "burrito1",
+        "imageUrl": "burrito",
         "category": "burritos"
       },
       {
-        "id": "burrito2",
-        "name": "Carne Asada Burrito",
+        "id": "nachos",
+        "name": "Montana Nachos",
         "price": 14.99,
         "description": "Marinated steak with guacamole and pico de gallo",
-        "imageUrl": "burrito2",
+        "imageUrl": "nachos",
         "category": "burritos"
       },
       {
-        "id": "burrito3",
-        "name": "Vegetarian Bean Burrito",
+        "id": "gauc",
+        "name": "Napa Gauc",
         "price": 10.99,
         "description": "Black beans, rice, cheese, and grilled vegetables",
-        "imageUrl": "burrito3",
+        "imageUrl": "gauc",
         "category": "burritos"
       },
       {
-        "id": "burrito4",
-        "name": "Shrimp Burrito",
+        "id": "salsa",
+        "name": "Seattle Salsa",
         "price": 15.99,
         "description": "Seasoned shrimp with cilantro lime rice",
-        "imageUrl": "burrito4",
+        "imageUrl": "salsa",
         "category": "burritos"
       },
       {
-        "id": "burrito5",
-        "name": "Breakfast Burrito",
+        "id": "frasca",
+        "name": "Miami Frasca",
         "price": 9.99,
         "description": "Scrambled eggs, bacon, cheese, and hash browns",
-        "imageUrl": "burrito5",
+        "imageUrl": "frasca",
         "category": "burritos"
       },
       {
-        "id": "burrito6",
-        "name": "California Burrito",
+        "id": "churros",
+        "name": "LA Churros",
         "price": 13.99,
-        "description": "Carne asada, french fries, cheese, and sour cream",
-        "imageUrl": "burrito6",
-        "category": "burritos"
-      },
-      {
-        "id": "burrito7",
-        "name": "Fish Burrito",
-        "price": 14.49,
-        "description": "Battered fish with cabbage slaw and chipotle sauce",
-        "imageUrl": "burrito7",
-        "category": "burritos"
-      },
-      {
-        "id": "burrito8",
-        "name": "Carnitas Burrito",
-        "price": 13.49,
-        "description": "Slow-cooked pork with onions and cilantro",
-        "imageUrl": "burrito8",
-        "category": "burritos"
-      },
-      {
-        "id": "burrito9",
-        "name": "Vegan Beyond Burrito",
-        "price": 13.99,
-        "description": "Plant-based protein with black beans and veggies",
-        "imageUrl": "burrito9",
-        "category": "burritos"
-      },
-      {
-        "id": "burrito10",
-        "name": "Super Burrito",
-        "price": 16.99,
-        "description": "Double meat, extra cheese, and all the fixings",
-        "imageUrl": "burrito10",
+        "description": "Pork, french fries, cheese, and sour cream",
+        "imageUrl": "churros",
         "category": "burritos"
       }
     ],
@@ -299,38 +203,6 @@
         "price": 6.99,
         "description": "Natural lemon flavored sparkling water, 8-pack",
         "imageUrl": "cpg6",
-        "category": "cpgGoods"
-      },
-      {
-        "id": "cpg7",
-        "name": "Himalayan Pink Salt",
-        "price": 8.99,
-        "description": "Premium mineral-rich pink salt with grinder",
-        "imageUrl": "cpg7",
-        "category": "cpgGoods"
-      },
-      {
-        "id": "cpg8",
-        "name": "Organic Peanut Butter",
-        "price": 9.49,
-        "description": "Creamy peanut butter with no added sugar",
-        "imageUrl": "cpg8",
-        "category": "cpgGoods"
-      },
-      {
-        "id": "cpg9",
-        "name": "Green Tea Collection",
-        "price": 11.99,
-        "description": "Assorted green teas in premium tea bags",
-        "imageUrl": "cpg9",
-        "category": "cpgGoods"
-      },
-      {
-        "id": "cpg10",
-        "name": "Coconut Chips",
-        "price": 5.49,
-        "description": "Toasted coconut chips, lightly sweetened",
-        "imageUrl": "cpg10",
         "category": "cpgGoods"
       }
     ]
