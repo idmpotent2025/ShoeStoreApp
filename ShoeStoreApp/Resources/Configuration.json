@@ -109,7 +109,7 @@
     "Burritos": [
       {
         "id": "burrito",
-        "name": "California Burrito",
+        "name": "Burrito",
         "price": 12.99,
         "description": "Grilled chicken with rice, beans, and fresh salsa",
         "imageUrl": "burrito",
@@ -117,7 +117,7 @@
       },
       {
         "id": "nachos",
-        "name": "Montana Nachos",
+        "name": "Nachos",
         "price": 14.99,
         "description": "Marinated steak with guacamole and pico de gallo",
         "imageUrl": "nachos",
@@ -125,7 +125,7 @@
       },
       {
         "id": "gauc",
-        "name": "Napa Gauc",
+        "name": "Gauc",
         "price": 10.99,
         "description": "Black beans, rice, cheese, and grilled vegetables",
         "imageUrl": "gauc",
@@ -133,7 +133,7 @@
       },
       {
         "id": "salsa",
-        "name": "Seattle Salsa",
+        "name": "Salsa",
         "price": 15.99,
         "description": "Seasoned shrimp with cilantro lime rice",
         "imageUrl": "salsa",
@@ -141,7 +141,7 @@
       },
       {
         "id": "frasca",
-        "name": "Miami Frasca",
+        "name": "Frasca",
         "price": 9.99,
         "description": "Scrambled eggs, bacon, cheese, and hash browns",
         "imageUrl": "frasca",
@@ -149,7 +149,7 @@
       },
       {
         "id": "churros",
-        "name": "LA Churros",
+        "name": "Churros",
         "price": 13.99,
         "description": "Pork, french fries, cheese, and sour cream",
         "imageUrl": "churros",

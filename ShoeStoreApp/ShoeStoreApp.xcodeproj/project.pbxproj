@@ -38,6 +38,8 @@
 		7FA9C0342F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */; };
 		7FA9C0362F3F901D0028FB96 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0372F3F901D0028FB96 /* EmailInputSheet.swift */; };
 		7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */; };
+		7FA9C03A2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */; };
+		7FA9C03C2F3F901D0028FB99 /* PasswordLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */; };
 		7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */; };
 		7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */; };
 		7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */; };
@@ -99,6 +101,8 @@
 		7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeEmailOTPSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0372F3F901D0028FB96 /* EmailInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputSheet.swift; sourceTree = "<group>"; };
 		7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputSheet.swift; sourceTree = "<group>"; };
+		7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePasswordSignInViewModel.swift; sourceTree = "<group>"; };
+		7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginSheet.swift; sourceTree = "<group>"; };
 		7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFlowsViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoginView.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 				7FA9C0322F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift */,
 				7FA9C0332F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift */,
 				7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */,
+				7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */,
 				7FA9BFEA2F3F901D0028FB83 /* ProfileViewModel.swift */,
 				7FA9BFEB2F3F901D0028FB83 /* ShopViewModel.swift */,
 				7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */,
@@ -245,6 +250,7 @@
 				7FA9C0372F3F901D0028FB96 /* EmailInputSheet.swift */,
 				7FA9BFED2F3F901D0028FB83 /* LoadingView.swift */,
 				7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */,
+				7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -454,6 +460,8 @@
 				7FA9C0342F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift in Sources */,
 				7FA9C0362F3F901D0028FB96 /* EmailInputSheet.swift in Sources */,
 				7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */,
+				7FA9C03A2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift in Sources */,
+				7FA9C03C2F3F901D0028FB99 /* PasswordLoginSheet.swift in Sources */,
 				7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */,
 				7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */,
 				7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */,

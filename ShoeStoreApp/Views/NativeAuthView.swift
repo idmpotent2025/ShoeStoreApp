@@ -12,6 +12,7 @@ struct NativeAuthView: View {
     @ObservedObject var passkeysSignInViewModel: NativePasskeysSignInViewModel
     @ObservedObject var facebookSignInViewModel: NativeFacebookSignInViewModel
     @ObservedObject var emailOTPSignInViewModel: NativeEmailOTPSignInViewModel
+    @ObservedObject var passwordSignInViewModel: NativePasswordSignInViewModel
     @EnvironmentObject var authService: AuthService
 
     var body: some View {
@@ -62,9 +63,9 @@ struct NativeAuthView: View {
                             AuthMethodCard(
                                 icon: "apple.logo",
                                 title: "Native Sign in with Apple",
-                                description: "Use your Apple ID for secure authentication",
+                                description: "Use AppleID for secure login",
                                 badge: "Real",
-                                badgeColor: .green,
+                                badgeColor: .blue,
                                 isLoading: appleSignInViewModel.isLoading,
                                 action: {
                                     appleSignInViewModel.signIn()
@@ -75,9 +76,9 @@ struct NativeAuthView: View {
                             AuthMethodCard(
                                 icon: "key.fill",
                                 title: "Native SignIn With Passkey",
-                                description: "Passwordless sign-in with Face ID or Touch ID",
+                                description: "Login with Face ID or Touch ID",
                                 badge: "Real",
-                                badgeColor: .green,
+                                badgeColor: .blue,
                                 isLoading: passkeysSignInViewModel.isLoading,
                                 action: {
                                     passkeysSignInViewModel.signIn()
@@ -90,22 +91,35 @@ struct NativeAuthView: View {
                             AuthMethodCard(
                                 icon: "envelope.fill",
                                 title: "Native Email OTP",
-                                description: "Passwordless authentication via Email OTP",
+                                description: "SignIn via Email OTP",
                                 badge: "Real",
-                                badgeColor: .green,
+                                badgeColor: .blue,
                                 isLoading: emailOTPSignInViewModel.isLoading,
                                 action: {
                                     emailOTPSignInViewModel.startEmailOTPFlow()
                                 }
                             )
-                            
+
+                            // Password Login
+                            AuthMethodCard(
+                                icon: "lock.circle.fill",
+                                title: "Native Password Login",
+                                description: "Sign in with password",
+                                badge: "Real",
+                                badgeColor: .blue,
+                                isLoading: passwordSignInViewModel.isLoading,
+                                action: {
+                                    passwordSignInViewModel.startPasswordFlow()
+                                }
+                            )
+
                             // Facebook Login
                             AuthMethodCard(
                                 icon: "f.circle.fill",
                                 title: "Native Facebook Login",
                                 description: "Connect with your Facebook account",
                                 badge: "Mock",
-                                badgeColor: .green,
+                                badgeColor: .blue,
                                 isLoading: facebookSignInViewModel.isLoading,
                                 action: {
                                     facebookSignInViewModel.signIn()
@@ -139,6 +153,9 @@ struct NativeAuthView: View {
             .sheet(isPresented: $emailOTPSignInViewModel.showOTPInput) {
                 OTPInputSheet(viewModel: emailOTPSignInViewModel)
             }
+            .sheet(isPresented: $passwordSignInViewModel.showPasswordInput) {
+                PasswordLoginSheet(viewModel: passwordSignInViewModel)
+            }
         }
     }
 
@@ -147,28 +164,32 @@ struct NativeAuthView: View {
         appleSignInViewModel.isAuthenticated ||
         passkeysSignInViewModel.isAuthenticated ||
         facebookSignInViewModel.isAuthenticated ||
-        emailOTPSignInViewModel.isAuthenticated
+        emailOTPSignInViewModel.isAuthenticated ||
+        passwordSignInViewModel.isAuthenticated
     }
 
     private var currentEmail: String? {
         appleSignInViewModel.userEmail ??
         passkeysSignInViewModel.userEmail ??
         facebookSignInViewModel.userEmail ??
-        emailOTPSignInViewModel.userEmail
+        emailOTPSignInViewModel.userEmail ??
+        passwordSignInViewModel.userEmail
     }
 
     private var currentErrorMessage: String? {
         appleSignInViewModel.errorMessage ??
         passkeysSignInViewModel.errorMessage ??
         facebookSignInViewModel.errorMessage ??
-        emailOTPSignInViewModel.errorMessage
+        emailOTPSignInViewModel.errorMessage ??
+        passwordSignInViewModel.errorMessage
     }
 
     private var currentSuccessMessage: String? {
         appleSignInViewModel.successMessage ??
         passkeysSignInViewModel.successMessage ??
         facebookSignInViewModel.successMessage ??
-        emailOTPSignInViewModel.successMessage
+        emailOTPSignInViewModel.successMessage ??
+        passwordSignInViewModel.successMessage
     }
 
     private func logout() {
@@ -199,6 +220,11 @@ struct NativeAuthView: View {
         emailOTPSignInViewModel.userEmail = nil
         emailOTPSignInViewModel.successMessage = nil
         emailOTPSignInViewModel.errorMessage = nil
+
+        passwordSignInViewModel.isAuthenticated = false
+        passwordSignInViewModel.userEmail = nil
+        passwordSignInViewModel.successMessage = nil
+        passwordSignInViewModel.errorMessage = nil
     }
 }
 
