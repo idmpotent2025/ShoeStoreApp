@@ -11,6 +11,7 @@ struct NativeAuthView: View {
     @ObservedObject var appleSignInViewModel: NativeAppleSignInViewModel
     @ObservedObject var passkeysSignInViewModel: NativePasskeysSignInViewModel
     @ObservedObject var facebookSignInViewModel: NativeFacebookSignInViewModel
+    @ObservedObject var emailOTPSignInViewModel: NativeEmailOTPSignInViewModel
     @EnvironmentObject var authService: AuthService
 
     var body: some View {
@@ -83,6 +84,21 @@ struct NativeAuthView: View {
                                 }
                             )
 
+                            
+
+                            // Email OTP Login
+                            AuthMethodCard(
+                                icon: "envelope.fill",
+                                title: "Native Email OTP",
+                                description: "Passwordless authentication via Email OTP",
+                                badge: "Real",
+                                badgeColor: .green,
+                                isLoading: emailOTPSignInViewModel.isLoading,
+                                action: {
+                                    emailOTPSignInViewModel.startEmailOTPFlow()
+                                }
+                            )
+                            
                             // Facebook Login
                             AuthMethodCard(
                                 icon: "f.circle.fill",
@@ -117,6 +133,12 @@ struct NativeAuthView: View {
             .background(Color.theme.background.ignoresSafeArea())
             .navigationTitle("Native Auth")
             .navigationBarTitleDisplayMode(.inline)
+            .sheet(isPresented: $emailOTPSignInViewModel.showEmailInput) {
+                EmailInputSheet(viewModel: emailOTPSignInViewModel)
+            }
+            .sheet(isPresented: $emailOTPSignInViewModel.showOTPInput) {
+                OTPInputSheet(viewModel: emailOTPSignInViewModel)
+            }
         }
     }
 
@@ -124,25 +146,29 @@ struct NativeAuthView: View {
     private var isAuthenticated: Bool {
         appleSignInViewModel.isAuthenticated ||
         passkeysSignInViewModel.isAuthenticated ||
-        facebookSignInViewModel.isAuthenticated
+        facebookSignInViewModel.isAuthenticated ||
+        emailOTPSignInViewModel.isAuthenticated
     }
 
     private var currentEmail: String? {
         appleSignInViewModel.userEmail ??
         passkeysSignInViewModel.userEmail ??
-        facebookSignInViewModel.userEmail
+        facebookSignInViewModel.userEmail ??
+        emailOTPSignInViewModel.userEmail
     }
 
     private var currentErrorMessage: String? {
         appleSignInViewModel.errorMessage ??
         passkeysSignInViewModel.errorMessage ??
-        facebookSignInViewModel.errorMessage
+        facebookSignInViewModel.errorMessage ??
+        emailOTPSignInViewModel.errorMessage
     }
 
     private var currentSuccessMessage: String? {
         appleSignInViewModel.successMessage ??
         passkeysSignInViewModel.successMessage ??
-        facebookSignInViewModel.successMessage
+        facebookSignInViewModel.successMessage ??
+        emailOTPSignInViewModel.successMessage
     }
 
     private func logout() {
@@ -168,6 +194,11 @@ struct NativeAuthView: View {
         facebookSignInViewModel.userEmail = nil
         facebookSignInViewModel.successMessage = nil
         facebookSignInViewModel.errorMessage = nil
+
+        emailOTPSignInViewModel.isAuthenticated = false
+        emailOTPSignInViewModel.userEmail = nil
+        emailOTPSignInViewModel.successMessage = nil
+        emailOTPSignInViewModel.errorMessage = nil
     }
 }
 

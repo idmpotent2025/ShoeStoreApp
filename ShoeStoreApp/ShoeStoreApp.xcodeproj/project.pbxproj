@@ -35,6 +35,9 @@
 		7FA9C00E2F3F901D0028FB8A /* NativeAppleSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0262F3F901D0028FB8A /* NativeAppleSignInViewModel.swift */; };
 		7FA9C0162F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0322F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift */; };
 		7FA9C0172F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0332F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift */; };
+		7FA9C0342F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */; };
+		7FA9C0362F3F901D0028FB96 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0372F3F901D0028FB96 /* EmailInputSheet.swift */; };
+		7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */; };
 		7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */; };
 		7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */; };
 		7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */; };
@@ -93,6 +96,9 @@
 		7FA9C0262F3F901D0028FB8A /* NativeAppleSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAppleSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0322F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePasskeysSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0332F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeFacebookSignInViewModel.swift; sourceTree = "<group>"; };
+		7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeEmailOTPSignInViewModel.swift; sourceTree = "<group>"; };
+		7FA9C0372F3F901D0028FB96 /* EmailInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInputSheet.swift; sourceTree = "<group>"; };
+		7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputSheet.swift; sourceTree = "<group>"; };
 		7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFlowsViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoginView.swift; sourceTree = "<group>"; };
@@ -224,6 +230,7 @@
 				7FA9C0262F3F901D0028FB8A /* NativeAppleSignInViewModel.swift */,
 				7FA9C0322F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift */,
 				7FA9C0332F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift */,
+				7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */,
 				7FA9BFEA2F3F901D0028FB83 /* ProfileViewModel.swift */,
 				7FA9BFEB2F3F901D0028FB83 /* ShopViewModel.swift */,
 				7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */,
@@ -235,7 +242,9 @@
 		7FA9BFEE2F3F901D0028FB83 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				7FA9C0372F3F901D0028FB96 /* EmailInputSheet.swift */,
 				7FA9BFED2F3F901D0028FB83 /* LoadingView.swift */,
+				7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -442,6 +451,9 @@
 				7FA9C00E2F3F901D0028FB8A /* NativeAppleSignInViewModel.swift in Sources */,
 				7FA9C0162F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift in Sources */,
 				7FA9C0172F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift in Sources */,
+				7FA9C0342F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift in Sources */,
+				7FA9C0362F3F901D0028FB96 /* EmailInputSheet.swift in Sources */,
+				7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */,
 				7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */,
 				7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */,
 				7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */,

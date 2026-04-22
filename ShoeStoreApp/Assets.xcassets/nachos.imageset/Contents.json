@@ -1,12 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "nachos-gemini2 1.png",
+      "filename" : "nachos-gemini2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "nachos-gemini2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

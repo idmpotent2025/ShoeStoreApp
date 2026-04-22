@@ -14,6 +14,7 @@ struct ContentView: View {
     @StateObject private var appleSignInViewModel: NativeAppleSignInViewModel
     @StateObject private var passkeysSignInViewModel: NativePasskeysSignInViewModel
     @StateObject private var facebookSignInViewModel: NativeFacebookSignInViewModel
+    @StateObject private var emailOTPSignInViewModel: NativeEmailOTPSignInViewModel
 
     init() {
         let authService = AuthService()
@@ -23,6 +24,7 @@ struct ContentView: View {
         _appleSignInViewModel = StateObject(wrappedValue: NativeAppleSignInViewModel(authService: authService))
         _passkeysSignInViewModel = StateObject(wrappedValue: NativePasskeysSignInViewModel(authService: authService))
         _facebookSignInViewModel = StateObject(wrappedValue: NativeFacebookSignInViewModel(authService: authService))
+        _emailOTPSignInViewModel = StateObject(wrappedValue: NativeEmailOTPSignInViewModel(authService: authService))
     }
 
     var body: some View {
@@ -44,7 +46,8 @@ struct ContentView: View {
             NativeAuthView(
                 appleSignInViewModel: appleSignInViewModel,
                 passkeysSignInViewModel: passkeysSignInViewModel,
-                facebookSignInViewModel: facebookSignInViewModel
+                facebookSignInViewModel: facebookSignInViewModel,
+                emailOTPSignInViewModel: emailOTPSignInViewModel
             )
             .environmentObject(authService)
             .tabItem {
