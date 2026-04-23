@@ -12,17 +12,25 @@ import Combine
 class ShopViewModel: ObservableObject {
     @Published var products: [Product] = []
     @Published var isLoading = true
-    @Published var selectedCategory: ProductCategory = .dresses {
-        didSet {
-            saveSelectedCategory()
-        }
-    }
+    @Published var selectedCategory: ProductCategory = .dresses
+    @Published var brandLabel: String = "Shoe Store"
+    @Published var brandFontStyle: BrandFontStyle = .system
 
     private var configuration: AppConfiguration?
-    private let categoryKey = "selectedProductCategory"
+    private let preferencesManager = PreferencesManager.shared
+    private var cancellables = Set<AnyCancellable>()
 
     init() {
-        loadSelectedCategory()
+        // Subscribe to PreferencesManager for category, brand label, and font style
+        preferencesManager.$selectedCategory
+            .assign(to: &$selectedCategory)
+
+        preferencesManager.$brandLabel
+            .assign(to: &$brandLabel)
+
+        preferencesManager.$brandFontStyle
+            .assign(to: &$brandFontStyle)
+
         loadProducts()
     }
 
@@ -42,21 +50,6 @@ class ShopViewModel: ObservableObject {
 
     var filteredProducts: [Product] {
         return products.filter { $0.category == selectedCategory }
-    }
-
-    func selectCategory(_ category: ProductCategory) {
-        selectedCategory = category
-    }
-
-    private func saveSelectedCategory() {
-        UserDefaults.standard.set(selectedCategory.rawValue, forKey: categoryKey)
-    }
-
-    private func loadSelectedCategory() {
-        if let savedCategory = UserDefaults.standard.string(forKey: categoryKey),
-           let category = ProductCategory(rawValue: savedCategory) {
-            selectedCategory = category
-        }
     }
 
     func refreshProducts() {

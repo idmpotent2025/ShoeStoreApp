@@ -116,6 +116,16 @@ struct UniversalLoginView: View {
             .background(Color.theme.background.ignoresSafeArea())
             .navigationTitle("Hosted UX")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.theme.background, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("AppIcon")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                        .clipShape(RoundedRectangle(cornerRadius: 6))
+                }
+            }
         }
     }
 }

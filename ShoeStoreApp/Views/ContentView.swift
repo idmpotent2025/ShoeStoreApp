@@ -16,6 +16,9 @@ struct ContentView: View {
     @StateObject private var facebookSignInViewModel: NativeFacebookSignInViewModel
     @StateObject private var emailOTPSignInViewModel: NativeEmailOTPSignInViewModel
     @StateObject private var passwordSignInViewModel: NativePasswordSignInViewModel
+    @StateObject private var appLockManager = AppLockManager.shared
+
+    @Environment(\.scenePhase) private var scenePhase
 
     init() {
         let authService = AuthService()
@@ -30,49 +33,67 @@ struct ContentView: View {
     }
 
     var body: some View {
-        TabView {
-            ShopCartView()
-                .environmentObject(cartViewModel)
+        ZStack {
+            TabView {
+                ShopCartView()
+                    .environmentObject(cartViewModel)
+                    .tabItem {
+                        Label("Shop", systemImage: "bag.fill")
+                    }
+
+                UniversalLoginView(
+                    viewModel: UniversalLoginViewModel(authService: authService),
+                    signUpViewModel: SignUpUniversalLoginViewModel(authService: authService)
+                )
                 .tabItem {
-                    Label("Shop", systemImage: "bag.fill")
+                    Label("Universal", systemImage: "lock.shield.fill")
                 }
-                .badge(cartViewModel.totalItems)
 
-            UniversalLoginView(
-                viewModel: UniversalLoginViewModel(authService: authService),
-                signUpViewModel: SignUpUniversalLoginViewModel(authService: authService)
-            )
-            .tabItem {
-                Label("Universal", systemImage: "lock.shield.fill")
+                NativeAuthView(
+                    appleSignInViewModel: appleSignInViewModel,
+                    passkeysSignInViewModel: passkeysSignInViewModel,
+                    facebookSignInViewModel: facebookSignInViewModel,
+                    emailOTPSignInViewModel: emailOTPSignInViewModel,
+                    passwordSignInViewModel: passwordSignInViewModel
+                )
+                .environmentObject(authService)
+                .tabItem {
+                    Label("Native", systemImage: "touchid")
+                }
+
+                AdvancedFlowsView(
+                    viewModel: AdvancedFlowsViewModel(qrCodeService: qrCodeService)
+                )
+                .tabItem {
+                    Label("Multi-Channel", systemImage: "gearshape.2.fill")
+                }
+
+                ProfileView(
+                    viewModel: ProfileViewModel(authService: authService)
+                )
+                .environmentObject(authService)
+                .tabItem {
+                    Label("Profile", systemImage: "person.circle.fill")
+                }
             }
+            .accentColor(.theme.accent)
 
-            NativeAuthView(
-                appleSignInViewModel: appleSignInViewModel,
-                passkeysSignInViewModel: passkeysSignInViewModel,
-                facebookSignInViewModel: facebookSignInViewModel,
-                emailOTPSignInViewModel: emailOTPSignInViewModel,
-                passwordSignInViewModel: passwordSignInViewModel
-            )
-            .environmentObject(authService)
-            .tabItem {
-                Label("Native", systemImage: "touchid")
-            }
-
-            AdvancedFlowsView(
-                viewModel: AdvancedFlowsViewModel(qrCodeService: qrCodeService)
-            )
-            .tabItem {
-                Label("Multi-Channel", systemImage: "gearshape.2.fill")
-            }
-
-            TokensView(
-                viewModel: TokensViewModel(authService: authService)
-            )
-            .environmentObject(authService)
-            .tabItem {
-                Label("Tokens", systemImage: "key.fill")
+            // App Lock Overlay
+            if appLockManager.isLocked {
+                AppLockView(appLockManager: appLockManager)
+                    .transition(.opacity)
+                    .zIndex(999)
             }
         }
-        .accentColor(.theme.accent)
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .active {
+                appLockManager.handleAppBecameActive()
+            } else if newPhase == .background {
+                // Only track .background, not .inactive
+                // .inactive happens during system overlays (Sign In with Apple, Face ID, etc.)
+                // .background happens when user truly leaves the app
+                appLockManager.handleAppWentToBackground()
+            }
+        }
     }
 }

@@ -147,6 +147,16 @@ struct NativeAuthView: View {
             .background(Color.theme.background.ignoresSafeArea())
             .navigationTitle("Native UX")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.theme.background, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("AppIcon")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                        .clipShape(RoundedRectangle(cornerRadius: 6))
+                }
+            }
             .sheet(isPresented: $emailOTPSignInViewModel.showEmailInput) {
                 EmailInputSheet(viewModel: emailOTPSignInViewModel)
             }

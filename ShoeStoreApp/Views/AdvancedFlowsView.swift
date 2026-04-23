@@ -55,6 +55,16 @@ struct AdvancedFlowsView: View {
             .background(Color.theme.background.ignoresSafeArea())
             .navigationTitle("Multi-Channel")
             .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(Color.theme.background, for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Image("AppIcon")
+                        .resizable()
+                        .frame(width: 28, height: 28)
+                        .clipShape(RoundedRectangle(cornerRadius: 6))
+                }
+            }
             .sheet(isPresented: $showQRCodeSheet) {
                 QRCodeLoginSheet(viewModel: viewModel)
             }

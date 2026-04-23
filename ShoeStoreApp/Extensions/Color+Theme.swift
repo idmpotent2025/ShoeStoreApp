@@ -15,11 +15,14 @@ extension Color {
         var text: Color
 
         static var current: Theme {
+            // Get dynamic background from ThemeManager
+            let themeManager = ThemeManager.shared
+
             if let config = AppConfiguration.load() {
                 return Theme(
                     primary: config.branding.primaryColorValue,
                     accent: config.branding.accentColorValue,
-                    background: config.branding.backgroundColorValue,
+                    background: themeManager.backgroundColor,
                     text: Color(hex: "#1A1A1A")
                 )
             } else {
@@ -27,7 +30,7 @@ extension Color {
                 return Theme(
                     primary: Color(hex: "#003057"),
                     accent: Color(hex: "#0055A6"),
-                    background: Color(hex: "#3A7D7D"),
+                    background: themeManager.backgroundColor,
                     text: Color(hex: "#1A1A1A")
                 )
             }

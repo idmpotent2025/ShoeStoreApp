@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F3206E92F9A81E4007CCE29 /* FaceIDLockOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206E52F9A81E4007CCE29 /* FaceIDLockOverlay.swift */; };
+		7F3206EA2F9A81E4007CCE29 /* UserProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206E82F9A81E4007CCE29 /* UserProfileCard.swift */; };
+		7F3206EB2F9A81E4007CCE29 /* TokensCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206E72F9A81E4007CCE29 /* TokensCard.swift */; };
+		7F3206EC2F9A81E4007CCE29 /* SettingsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206E62F9A81E4007CCE29 /* SettingsCard.swift */; };
+		7F3206EF2F9A8230007CCE29 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206EE2F9A8230007CCE29 /* ThemeManager.swift */; };
+		7F3206F02F9A8230007CCE29 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206ED2F9A8230007CCE29 /* PreferencesManager.swift */; };
+		7F3206F22F9A87C4007CCE29 /* BrandFontStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206F12F9A87C4007CCE29 /* BrandFontStyle.swift */; };
+		7F3206F42F9A92F3007CCE29 /* AppLockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206F32F9A92F3007CCE29 /* AppLockManager.swift */; };
+		7F3206F62F9A930E007CCE29 /* AppLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206F52F9A930E007CCE29 /* AppLockView.swift */; };
 		7FA9BFD82F3F8F060028FB83 /* Auth0 in Frameworks */ = {isa = PBXBuildFile; productRef = 7FA9BFD92F3F8F060028FB83 /* Auth0 */; };
 		7FA9BFF62F3F901D0028FB83 /* Configuration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9BFE42F3F901D0028FB83 /* Configuration.json */; };
 		7FA9BFF72F3F901D0028FB83 /* Auth0.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9BFDB2F3F901D0028FB83 /* Auth0.plist */; };
@@ -20,7 +29,6 @@
 		7FA9BFFF2F3F901D0028FB83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9BFF02F3F901D0028FB83 /* ContentView.swift */; };
 		7FA9C0002F3F901D0028FB83 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9BFEF2F3F901D0028FB83 /* CartView.swift */; };
 		7FA9C0012F3F901D0028FB83 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9BFE92F3F901D0028FB83 /* CartViewModel.swift */; };
-		7FA9C0022F3F901D0028FB83 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9BFF32F3F901D0028FB83 /* ShopView.swift */; };
 		7FA9C0032F3F901D0028FB83 /* ShopViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9BFEB2F3F901D0028FB83 /* ShopViewModel.swift */; };
 		7FA9C0042F3F901D0028FB83 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9BFED2F3F901D0028FB83 /* LoadingView.swift */; };
 		7FA9C0052F3F901D0028FB83 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9BFE62F3F901D0028FB83 /* AuthService.swift */; };
@@ -33,22 +41,20 @@
 		7FA9C00C2F3F901D0028FB88 /* JWTDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0242F3F901D0028FB88 /* JWTDecoder.swift */; };
 		7FA9C00D2F3F901D0028FB89 /* UniversalLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0252F3F901D0028FB89 /* UniversalLoginViewModel.swift */; };
 		7FA9C00E2F3F901D0028FB8A /* NativeAppleSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0262F3F901D0028FB8A /* NativeAppleSignInViewModel.swift */; };
+		7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */; };
+		7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */; };
+		7FA9C0122F3F901D0028FB8E /* NativeAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C02A2F3F901D0028FB8E /* NativeAuthView.swift */; };
+		7FA9C0132F3F901D0028FB8F /* AdvancedFlowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C02B2F3F901D0028FB8F /* AdvancedFlowsView.swift */; };
+		7FA9C0152F3F901D0028FB91 /* ShopCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C02E2F3F901D0028FB91 /* ShopCartView.swift */; };
 		7FA9C0162F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0322F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift */; };
 		7FA9C0172F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0332F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift */; };
+		7FA9C0312F3F901D0028FB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9C0302F3F901D0028FB92 /* Assets.xcassets */; };
 		7FA9C0342F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */; };
 		7FA9C0362F3F901D0028FB96 /* EmailInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0372F3F901D0028FB96 /* EmailInputSheet.swift */; };
 		7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */; };
 		7FA9C03A2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */; };
 		7FA9C03C2F3F901D0028FB99 /* PasswordLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */; };
 		7FA9C03E2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */; };
-		7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */; };
-		7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */; };
-		7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */; };
-		7FA9C0122F3F901D0028FB8E /* NativeAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C02A2F3F901D0028FB8E /* NativeAuthView.swift */; };
-		7FA9C0132F3F901D0028FB8F /* AdvancedFlowsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C02B2F3F901D0028FB8F /* AdvancedFlowsView.swift */; };
-		7FA9C0142F3F901D0028FB90 /* TokensView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C02C2F3F901D0028FB90 /* TokensView.swift */; };
-		7FA9C0152F3F901D0028FB91 /* ShopCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C02E2F3F901D0028FB91 /* ShopCartView.swift */; };
-		7FA9C0312F3F901D0028FB92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FA9C0302F3F901D0028FB92 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +75,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F3206E52F9A81E4007CCE29 /* FaceIDLockOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDLockOverlay.swift; sourceTree = "<group>"; };
+		7F3206E62F9A81E4007CCE29 /* SettingsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCard.swift; sourceTree = "<group>"; };
+		7F3206E72F9A81E4007CCE29 /* TokensCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensCard.swift; sourceTree = "<group>"; };
+		7F3206E82F9A81E4007CCE29 /* UserProfileCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileCard.swift; sourceTree = "<group>"; };
+		7F3206ED2F9A8230007CCE29 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
+		7F3206EE2F9A8230007CCE29 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
+		7F3206F12F9A87C4007CCE29 /* BrandFontStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrandFontStyle.swift; sourceTree = "<group>"; };
+		7F3206F32F9A92F3007CCE29 /* AppLockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockManager.swift; sourceTree = "<group>"; };
+		7F3206F52F9A930E007CCE29 /* AppLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLockView.swift; sourceTree = "<group>"; };
 		7FA9BFB02F3F8E370028FB83 /* ShoeStoreApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoeStoreApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA9BFBD2F3F8E3A0028FB83 /* ShoeStoreAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoeStoreAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FA9BFC72F3F8E3A0028FB83 /* ShoeStoreAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoeStoreAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,7 +104,6 @@
 		7FA9BFF02F3F901D0028FB83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7FA9BFF12F3F901D0028FB83 /* ProductTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTileView.swift; sourceTree = "<group>"; };
 		7FA9BFF22F3F901D0028FB83 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		7FA9BFF32F3F901D0028FB83 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		7FA9C0202F3F901D0028FB84 /* AuthFlowModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFlowModels.swift; sourceTree = "<group>"; };
 		7FA9C0212F3F901D0028FB85 /* AppleSignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInService.swift; sourceTree = "<group>"; };
 		7FA9C0222F3F901D0028FB86 /* PasskeyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasskeyService.swift; sourceTree = "<group>"; };
@@ -97,6 +111,12 @@
 		7FA9C0242F3F901D0028FB88 /* JWTDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JWTDecoder.swift; sourceTree = "<group>"; };
 		7FA9C0252F3F901D0028FB89 /* UniversalLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoginViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0262F3F901D0028FB8A /* NativeAppleSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAppleSignInViewModel.swift; sourceTree = "<group>"; };
+		7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFlowsViewModel.swift; sourceTree = "<group>"; };
+		7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoginView.swift; sourceTree = "<group>"; };
+		7FA9C02A2F3F901D0028FB8E /* NativeAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAuthView.swift; sourceTree = "<group>"; };
+		7FA9C02B2F3F901D0028FB8F /* AdvancedFlowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFlowsView.swift; sourceTree = "<group>"; };
+		7FA9C02E2F3F901D0028FB91 /* ShopCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartView.swift; sourceTree = "<group>"; };
+		7FA9C0302F3F901D0028FB92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FA9C0322F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePasskeysSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0332F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeFacebookSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0352F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeEmailOTPSignInViewModel.swift; sourceTree = "<group>"; };
@@ -105,14 +125,6 @@
 		7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePasswordSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginSheet.swift; sourceTree = "<group>"; };
 		7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUniversalLoginViewModel.swift; sourceTree = "<group>"; };
-		7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFlowsViewModel.swift; sourceTree = "<group>"; };
-		7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewModel.swift; sourceTree = "<group>"; };
-		7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoginView.swift; sourceTree = "<group>"; };
-		7FA9C02A2F3F901D0028FB8E /* NativeAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeAuthView.swift; sourceTree = "<group>"; };
-		7FA9C02B2F3F901D0028FB8F /* AdvancedFlowsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFlowsView.swift; sourceTree = "<group>"; };
-		7FA9C02C2F3F901D0028FB90 /* TokensView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensView.swift; sourceTree = "<group>"; };
-		7FA9C02E2F3F901D0028FB91 /* ShopCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCartView.swift; sourceTree = "<group>"; };
-		7FA9C0302F3F901D0028FB92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -200,6 +212,7 @@
 		7FA9BFE32F3F901D0028FB83 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7F3206F12F9A87C4007CCE29 /* BrandFontStyle.swift */,
 				7FA9BFDF2F3F901D0028FB83 /* AppConfiguration.swift */,
 				7FA9C0202F3F901D0028FB84 /* AuthFlowModels.swift */,
 				7FA9BFE02F3F901D0028FB83 /* CartItem.swift */,
@@ -220,6 +233,9 @@
 		7FA9BFE72F3F901D0028FB83 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				7F3206F32F9A92F3007CCE29 /* AppLockManager.swift */,
+				7F3206ED2F9A8230007CCE29 /* PreferencesManager.swift */,
+				7F3206EE2F9A8230007CCE29 /* ThemeManager.swift */,
 				7FA9C0212F3F901D0028FB85 /* AppleSignInService.swift */,
 				7FA9BFE62F3F901D0028FB83 /* AuthService.swift */,
 				7FA9C0222F3F901D0028FB86 /* PasskeyService.swift */,
@@ -241,7 +257,6 @@
 				7FA9BFEA2F3F901D0028FB83 /* ProfileViewModel.swift */,
 				7FA9BFEB2F3F901D0028FB83 /* ShopViewModel.swift */,
 				7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */,
-				7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */,
 				7FA9C0252F3F901D0028FB89 /* UniversalLoginViewModel.swift */,
 			);
 			path = ViewModels;
@@ -261,6 +276,11 @@
 		7FA9BFF42F3F901D0028FB83 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7F3206F52F9A930E007CCE29 /* AppLockView.swift */,
+				7F3206E52F9A81E4007CCE29 /* FaceIDLockOverlay.swift */,
+				7F3206E62F9A81E4007CCE29 /* SettingsCard.swift */,
+				7F3206E72F9A81E4007CCE29 /* TokensCard.swift */,
+				7F3206E82F9A81E4007CCE29 /* UserProfileCard.swift */,
 				7FA9C02B2F3F901D0028FB8F /* AdvancedFlowsView.swift */,
 				7FA9BFEF2F3F901D0028FB83 /* CartView.swift */,
 				7FA9BFEE2F3F901D0028FB83 /* Components */,
@@ -269,8 +289,6 @@
 				7FA9BFF12F3F901D0028FB83 /* ProductTileView.swift */,
 				7FA9BFF22F3F901D0028FB83 /* ProfileView.swift */,
 				7FA9C02E2F3F901D0028FB91 /* ShopCartView.swift */,
-				7FA9BFF32F3F901D0028FB83 /* ShopView.swift */,
-				7FA9C02C2F3F901D0028FB90 /* TokensView.swift */,
 				7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */,
 			);
 			path = Views;
@@ -436,16 +454,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FA9BFF82F3F901D0028FB83 /* CartItem.swift in Sources */,
+				7F3206F62F9A930E007CCE29 /* AppLockView.swift in Sources */,
 				7FA9BFF92F3F901D0028FB83 /* ProfileViewModel.swift in Sources */,
 				7FA9BFFA2F3F901D0028FB83 /* ProductTileView.swift in Sources */,
 				7FA9BFFB2F3F901D0028FB83 /* ShoeStoreAppApp.swift in Sources */,
 				7FA9BFFC2F3F901D0028FB83 /* Color+Theme.swift in Sources */,
 				7FA9BFFD2F3F901D0028FB83 /* AppConfiguration.swift in Sources */,
+				7F3206F22F9A87C4007CCE29 /* BrandFontStyle.swift in Sources */,
 				7FA9BFFE2F3F901D0028FB83 /* ProfileView.swift in Sources */,
 				7FA9BFFF2F3F901D0028FB83 /* ContentView.swift in Sources */,
 				7FA9C0002F3F901D0028FB83 /* CartView.swift in Sources */,
 				7FA9C0012F3F901D0028FB83 /* CartViewModel.swift in Sources */,
-				7FA9C0022F3F901D0028FB83 /* ShopView.swift in Sources */,
 				7FA9C0032F3F901D0028FB83 /* ShopViewModel.swift in Sources */,
 				7FA9C0042F3F901D0028FB83 /* LoadingView.swift in Sources */,
 				7FA9C0052F3F901D0028FB83 /* AuthService.swift in Sources */,
@@ -459,19 +478,24 @@
 				7FA9C00D2F3F901D0028FB89 /* UniversalLoginViewModel.swift in Sources */,
 				7FA9C00E2F3F901D0028FB8A /* NativeAppleSignInViewModel.swift in Sources */,
 				7FA9C0162F3F901D0028FB93 /* NativePasskeysSignInViewModel.swift in Sources */,
+				7F3206E92F9A81E4007CCE29 /* FaceIDLockOverlay.swift in Sources */,
+				7F3206EA2F9A81E4007CCE29 /* UserProfileCard.swift in Sources */,
+				7F3206EB2F9A81E4007CCE29 /* TokensCard.swift in Sources */,
+				7F3206EC2F9A81E4007CCE29 /* SettingsCard.swift in Sources */,
 				7FA9C0172F3F901D0028FB94 /* NativeFacebookSignInViewModel.swift in Sources */,
 				7FA9C0342F3F901D0028FB95 /* NativeEmailOTPSignInViewModel.swift in Sources */,
 				7FA9C0362F3F901D0028FB96 /* EmailInputSheet.swift in Sources */,
+				7F3206EF2F9A8230007CCE29 /* ThemeManager.swift in Sources */,
+				7F3206F02F9A8230007CCE29 /* PreferencesManager.swift in Sources */,
+				7F3206F42F9A92F3007CCE29 /* AppLockManager.swift in Sources */,
 				7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */,
 				7FA9C03A2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift in Sources */,
 				7FA9C03C2F3F901D0028FB99 /* PasswordLoginSheet.swift in Sources */,
 				7FA9C03E2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift in Sources */,
 				7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */,
-				7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */,
 				7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */,
 				7FA9C0122F3F901D0028FB8E /* NativeAuthView.swift in Sources */,
 				7FA9C0132F3F901D0028FB8F /* AdvancedFlowsView.swift in Sources */,
-				7FA9C0142F3F901D0028FB90 /* TokensView.swift in Sources */,
 				7FA9C0152F3F901D0028FB91 /* ShopCartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
