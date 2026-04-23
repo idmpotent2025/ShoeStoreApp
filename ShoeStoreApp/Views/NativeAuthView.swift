@@ -145,7 +145,7 @@ struct NativeAuthView: View {
                 .padding()
             }
             .background(Color.theme.background.ignoresSafeArea())
-            .navigationTitle("Native Auth")
+            .navigationTitle("Native UX")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $emailOTPSignInViewModel.showEmailInput) {
                 EmailInputSheet(viewModel: emailOTPSignInViewModel)

@@ -39,7 +39,8 @@ struct ContentView: View {
                 .badge(cartViewModel.totalItems)
 
             UniversalLoginView(
-                viewModel: UniversalLoginViewModel(authService: authService)
+                viewModel: UniversalLoginViewModel(authService: authService),
+                signUpViewModel: SignUpUniversalLoginViewModel(authService: authService)
             )
             .tabItem {
                 Label("Universal", systemImage: "lock.shield.fill")
@@ -61,7 +62,7 @@ struct ContentView: View {
                 viewModel: AdvancedFlowsViewModel(qrCodeService: qrCodeService)
             )
             .tabItem {
-                Label("Advanced", systemImage: "gearshape.2.fill")
+                Label("Multi-Channel", systemImage: "gearshape.2.fill")
             }
 
             TokensView(

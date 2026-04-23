@@ -40,6 +40,7 @@
 		7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */; };
 		7FA9C03A2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */; };
 		7FA9C03C2F3F901D0028FB99 /* PasswordLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */; };
+		7FA9C03E2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */; };
 		7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */; };
 		7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */; };
 		7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */; };
@@ -103,6 +104,7 @@
 		7FA9C0392F3F901D0028FB97 /* OTPInputSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPInputSheet.swift; sourceTree = "<group>"; };
 		7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePasswordSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginSheet.swift; sourceTree = "<group>"; };
+		7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUniversalLoginViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0272F3F901D0028FB8B /* AdvancedFlowsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedFlowsViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensViewModel.swift; sourceTree = "<group>"; };
 		7FA9C0292F3F901D0028FB8D /* UniversalLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLoginView.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */,
 				7FA9BFEA2F3F901D0028FB83 /* ProfileViewModel.swift */,
 				7FA9BFEB2F3F901D0028FB83 /* ShopViewModel.swift */,
+				7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */,
 				7FA9C0282F3F901D0028FB8C /* TokensViewModel.swift */,
 				7FA9C0252F3F901D0028FB89 /* UniversalLoginViewModel.swift */,
 			);
@@ -462,6 +465,7 @@
 				7FA9C0382F3F901D0028FB97 /* OTPInputSheet.swift in Sources */,
 				7FA9C03A2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift in Sources */,
 				7FA9C03C2F3F901D0028FB99 /* PasswordLoginSheet.swift in Sources */,
+				7FA9C03E2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift in Sources */,
 				7FA9C00F2F3F901D0028FB8B /* AdvancedFlowsViewModel.swift in Sources */,
 				7FA9C0102F3F901D0028FB8C /* TokensViewModel.swift in Sources */,
 				7FA9C0112F3F901D0028FB8D /* UniversalLoginView.swift in Sources */,

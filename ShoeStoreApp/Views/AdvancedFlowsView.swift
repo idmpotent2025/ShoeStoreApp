@@ -53,7 +53,7 @@ struct AdvancedFlowsView: View {
                 .padding()
             }
             .background(Color.theme.background.ignoresSafeArea())
-            .navigationTitle("Advanced")
+            .navigationTitle("Multi-Channel")
             .navigationBarTitleDisplayMode(.inline)
             .sheet(isPresented: $showQRCodeSheet) {
                 QRCodeLoginSheet(viewModel: viewModel)

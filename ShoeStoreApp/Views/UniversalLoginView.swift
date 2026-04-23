@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UniversalLoginView: View {
     @ObservedObject var viewModel: UniversalLoginViewModel
+    @ObservedObject var signUpViewModel: SignUpUniversalLoginViewModel
 
     var body: some View {
         NavigationView {
@@ -59,6 +60,16 @@ struct UniversalLoginView: View {
                             )
 
                             FeatureCard(
+                                icon: "person.badge.plus.fill",
+                                title: "Hosted SignUp Flow",
+                                description: "Create new account with Universal Login",
+                                isLoading: signUpViewModel.isLoading,
+                                action: {
+                                    signUpViewModel.startSignUp()
+                                }
+                            )
+
+                            FeatureCard(
                                 icon: "person.2.fill",
                                 title: "Hosted Social Flow",
                                 description: "Support for Google, Facebook, Apple, and more",
@@ -103,7 +114,7 @@ struct UniversalLoginView: View {
                 .padding()
             }
             .background(Color.theme.background.ignoresSafeArea())
-            .navigationTitle("Universal Login")
+            .navigationTitle("Hosted UX")
             .navigationBarTitleDisplayMode(.inline)
         }
     }
