@@ -89,6 +89,52 @@ class UniversalLoginViewModel: ObservableObject {
     
     
 
+    @Published var showForgotPasswordSheet = false
+    @Published var successMessage: String?
+
+    func startForgotPassword() {
+        showForgotPasswordSheet = true
+    }
+
+    func sendPasswordResetEmail(email: String) {
+        isLoading = true
+        errorMessage = nil
+        successMessage = nil
+
+        authService.forgotPassword(email: email) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.isLoading = false
+
+                switch result {
+                case .success:
+                    self?.successMessage = "✉️ Email sent! Please check your inbox and click the link to reset your password."
+                    self?.showForgotPasswordSheet = false
+                case .failure(let error):
+                    self?.errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
+
+    func startResetPassword() {
+        isLoading = true
+        errorMessage = nil
+        successMessage = nil
+
+        authService.resetPassword { [weak self] result in
+            DispatchQueue.main.async {
+                self?.isLoading = false
+
+                switch result {
+                case .success:
+                    self?.successMessage = "✉️ Password reset email sent! Check your inbox and click the link to change your password."
+                case .failure(let error):
+                    self?.errorMessage = error.localizedDescription
+                }
+            }
+        }
+    }
+
     func logout() {
         authService.logout()
         isAuthenticated = false

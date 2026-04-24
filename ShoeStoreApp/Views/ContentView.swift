@@ -17,6 +17,7 @@ struct ContentView: View {
     @StateObject private var emailOTPSignInViewModel: NativeEmailOTPSignInViewModel
     @StateObject private var passwordSignInViewModel: NativePasswordSignInViewModel
     @StateObject private var appLockManager = AppLockManager.shared
+    @StateObject private var pushService = PushNotificationService.shared
 
     @Environment(\.scenePhase) private var scenePhase
 
@@ -94,6 +95,9 @@ struct ContentView: View {
                 // .background happens when user truly leaves the app
                 appLockManager.handleAppWentToBackground()
             }
+        }
+        .sheet(isPresented: $pushService.showCIBAApproval) {
+            CIBAApprovalView(pushService: pushService)
         }
     }
 }

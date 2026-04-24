@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct ShoeStoreAppApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+
     init() {
         // Configure navigation bar appearance
         let appearance = UINavigationBarAppearance()

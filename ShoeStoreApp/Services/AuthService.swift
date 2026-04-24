@@ -114,9 +114,80 @@ class AuthService: ObservableObject {
                 }
             }
     }
-    
-    
-    
+
+    // MARK: - Password Management
+
+    /// Hosted Forgot Password Flow (Pre-Login)
+    /// Prompts user for email, sends reset email via Auth0 API
+    /// The reset link in email opens Auth0's hosted password reset page (controlled by CIAM team)
+    func forgotPassword(email: String, completion: @escaping (Result<Void, Error>) -> Void) {
+        guard let domain = Auth0Plist.config?.domain else {
+            completion(.failure(NSError(
+                domain: "AuthService",
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "Auth0 domain not configured"]
+            )))
+            return
+        }
+
+        Auth0
+            .authentication()
+            .resetPassword(email: email, connection: "auth0LocalDB")
+            .start { result in
+                switch result {
+                case .success:
+                    // Password reset email sent successfully
+                    // User will click link in email to complete reset on Auth0's hosted page
+                    completion(.success(()))
+
+                case .failure(let error):
+                    print("Failed to send password reset email: \(error)")
+                    completion(.failure(error))
+                }
+            }
+    }
+
+    /// Hosted Reset Password Flow (Post-Login)
+    /// Sends password reset email with link to Auth0's hosted reset page
+    /// Even though user is authenticated, email verification is required for security
+    func resetPassword(completion: @escaping (Result<Void, Error>) -> Void) {
+        guard isAuthenticated else {
+            completion(.failure(NSError(
+                domain: "AuthService",
+                code: 401,
+                userInfo: [NSLocalizedDescriptionKey: "User must be authenticated to reset password"]
+            )))
+            return
+        }
+
+        // Get user email from profile
+        guard let email = userProfile?.email, !email.isEmpty else {
+            completion(.failure(NSError(
+                domain: "AuthService",
+                code: -1,
+                userInfo: [NSLocalizedDescriptionKey: "User email not available"]
+            )))
+            return
+        }
+
+        // Send password reset email via Authentication API
+        // The email link will open Auth0's hosted password reset page
+        Auth0
+            .authentication()
+            .resetPassword(email: email, connection: "auth0LocalDB")
+            .start { result in
+                switch result {
+                case .success:
+                    // Password reset email sent successfully
+                    completion(.success(()))
+
+                case .failure(let error):
+                    print("Failed to send password reset email: \(error)")
+                    completion(.failure(error))
+                }
+            }
+    }
+
     func logout() {
         Auth0
             .webAuth()

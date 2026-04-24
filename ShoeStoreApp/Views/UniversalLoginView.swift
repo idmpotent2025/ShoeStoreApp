@@ -15,6 +15,25 @@ struct UniversalLoginView: View {
         NavigationView {
             ScrollView {
                 VStack(spacing: 20) {
+                    // Success Message (Password Reset Email Sent)
+                    if let successMessage = viewModel.successMessage {
+                        VStack(spacing: 12) {
+                            Image(systemName: "envelope.circle.fill")
+                                .font(.system(size: 50))
+                                .foregroundColor(.green)
+
+                            Text(successMessage)
+                                .font(.body)
+                                .fontWeight(.medium)
+                                .foregroundColor(.green)
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green.opacity(0.15))
+                        .cornerRadius(12)
+                    }
+
                     // Success/Logout Section
                     if viewModel.isAuthenticated {
                         VStack(spacing: 16) {
@@ -43,6 +62,17 @@ struct UniversalLoginView: View {
                                 .foregroundColor(.white)
                                 .cornerRadius(12)
                             }
+
+                            // Reset Password (Post-Login)
+                            FeatureCard(
+                                icon: "key.horizontal.fill",
+                                title: "Hosted Reset Password",
+                                description: "Receive an email to securely change your password",
+                                isLoading: viewModel.isLoading,
+                                action: {
+                                    viewModel.startResetPassword()
+                                }
+                            )
                         }
                     }
 
@@ -76,6 +106,16 @@ struct UniversalLoginView: View {
                                 isLoading: viewModel.isLoading,
                                 action: {
                                     viewModel.startSocialULogin()
+                                }
+                            )
+
+                            FeatureCard(
+                                icon: "key.slash.fill",
+                                title: "Hosted Forgot Password",
+                                description: "Enter your email to receive a password reset link",
+                                isLoading: viewModel.isLoading,
+                                action: {
+                                    viewModel.startForgotPassword()
                                 }
                             )
 
@@ -125,6 +165,9 @@ struct UniversalLoginView: View {
                         .frame(width: 28, height: 28)
                         .clipShape(RoundedRectangle(cornerRadius: 6))
                 }
+            }
+            .sheet(isPresented: $viewModel.showForgotPasswordSheet) {
+                ForgotPasswordSheet(viewModel: viewModel)
             }
         }
     }

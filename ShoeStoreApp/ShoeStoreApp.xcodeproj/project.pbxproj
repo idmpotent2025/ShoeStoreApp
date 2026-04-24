@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		144192B54A56435F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144192B54A56435E /* AppDelegate.swift */; };
+		23464E77B8F5F88E3854FCAA /* ForgotPasswordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26724BABB1F42ADBEC7C5474 /* ForgotPasswordSheet.swift */; };
+		3E42052050074162 /* CIBAPushRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E42052050074161 /* CIBAPushRequest.swift */; };
+		4ABB4AEF972ED8C55683BDA9 /* ForgotPasswordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26724BABB1F42ADBEC7C5474 /* ForgotPasswordSheet.swift */; };
 		7F3206E92F9A81E4007CCE29 /* FaceIDLockOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206E52F9A81E4007CCE29 /* FaceIDLockOverlay.swift */; };
 		7F3206EA2F9A81E4007CCE29 /* UserProfileCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206E82F9A81E4007CCE29 /* UserProfileCard.swift */; };
 		7F3206EB2F9A81E4007CCE29 /* TokensCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F3206E72F9A81E4007CCE29 /* TokensCard.swift */; };
@@ -55,6 +59,9 @@
 		7FA9C03A2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */; };
 		7FA9C03C2F3F901D0028FB99 /* PasswordLoginSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */; };
 		7FA9C03E2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */; };
+		AC62624C33E74F84 /* CIBAApprovalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC62624C33E74F83 /* CIBAApprovalView.swift */; };
+		D8BE47ECB54A2C2F1E2BED32 /* ForgotPasswordSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26724BABB1F42ADBEC7C5474 /* ForgotPasswordSheet.swift */; };
+		FFDC4FB7F2434AA2 /* PushNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDC4FB7F2434AA1 /* PushNotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +82,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		144192B54A56435E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		26724BABB1F42ADBEC7C5474 /* ForgotPasswordSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ForgotPasswordSheet.swift; path = Views/ForgotPasswordSheet.swift; sourceTree = SOURCE_ROOT; };
+		3E42052050074161 /* CIBAPushRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIBAPushRequest.swift; sourceTree = "<group>"; };
 		7F3206E52F9A81E4007CCE29 /* FaceIDLockOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDLockOverlay.swift; sourceTree = "<group>"; };
 		7F3206E62F9A81E4007CCE29 /* SettingsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCard.swift; sourceTree = "<group>"; };
 		7F3206E72F9A81E4007CCE29 /* TokensCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokensCard.swift; sourceTree = "<group>"; };
@@ -125,6 +135,8 @@
 		7FA9C03B2F3F901D0028FB98 /* NativePasswordSignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativePasswordSignInViewModel.swift; sourceTree = "<group>"; };
 		7FA9C03D2F3F901D0028FB99 /* PasswordLoginSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordLoginSheet.swift; sourceTree = "<group>"; };
 		7FA9C03F2F3F901D0028FB9A /* SignUpUniversalLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUniversalLoginViewModel.swift; sourceTree = "<group>"; };
+		AC62624C33E74F83 /* CIBAApprovalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIBAApprovalView.swift; sourceTree = "<group>"; };
+		FFDC4FB7F2434AA1 /* PushNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -175,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				7FA9C0302F3F901D0028FB92 /* Assets.xcassets */,
+				144192B54A56435E /* AppDelegate.swift */,
 				7FA9BFDB2F3F901D0028FB83 /* Auth0.plist */,
 				7FA9BFDD2F3F901D0028FB83 /* Extensions */,
 				7FA9BFE32F3F901D0028FB83 /* Models */,
@@ -188,6 +201,7 @@
 				7FA9BFC02F3F8E3A0028FB83 /* ShoeStoreAppTests */,
 				7FA9BFCA2F3F8E3A0028FB83 /* ShoeStoreAppUITests */,
 				7FA9BFB12F3F8E370028FB83 /* Products */,
+				26724BABB1F42ADBEC7C5474 /* ForgotPasswordSheet.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				7F3206F12F9A87C4007CCE29 /* BrandFontStyle.swift */,
+				3E42052050074161 /* CIBAPushRequest.swift */,
 				7FA9BFDF2F3F901D0028FB83 /* AppConfiguration.swift */,
 				7FA9C0202F3F901D0028FB84 /* AuthFlowModels.swift */,
 				7FA9BFE02F3F901D0028FB83 /* CartItem.swift */,
@@ -234,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				7F3206F32F9A92F3007CCE29 /* AppLockManager.swift */,
+				FFDC4FB7F2434AA1 /* PushNotificationService.swift */,
 				7F3206ED2F9A8230007CCE29 /* PreferencesManager.swift */,
 				7F3206EE2F9A8230007CCE29 /* ThemeManager.swift */,
 				7FA9C0212F3F901D0028FB85 /* AppleSignInService.swift */,
@@ -277,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				7F3206F52F9A930E007CCE29 /* AppLockView.swift */,
+				AC62624C33E74F83 /* CIBAApprovalView.swift */,
 				7F3206E52F9A81E4007CCE29 /* FaceIDLockOverlay.swift */,
 				7F3206E62F9A81E4007CCE29 /* SettingsCard.swift */,
 				7F3206E72F9A81E4007CCE29 /* TokensCard.swift */,
@@ -454,6 +471,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FA9BFF82F3F901D0028FB83 /* CartItem.swift in Sources */,
+				144192B54A56435F /* AppDelegate.swift in Sources */,
+				3E42052050074162 /* CIBAPushRequest.swift in Sources */,
+				FFDC4FB7F2434AA2 /* PushNotificationService.swift in Sources */,
+				AC62624C33E74F84 /* CIBAApprovalView.swift in Sources */,
 				7F3206F62F9A930E007CCE29 /* AppLockView.swift in Sources */,
 				7FA9BFF92F3F901D0028FB83 /* ProfileViewModel.swift in Sources */,
 				7FA9BFFA2F3F901D0028FB83 /* ProductTileView.swift in Sources */,
@@ -497,6 +518,7 @@
 				7FA9C0122F3F901D0028FB8E /* NativeAuthView.swift in Sources */,
 				7FA9C0132F3F901D0028FB8F /* AdvancedFlowsView.swift in Sources */,
 				7FA9C0152F3F901D0028FB91 /* ShopCartView.swift in Sources */,
+				4ABB4AEF972ED8C55683BDA9 /* ForgotPasswordSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23464E77B8F5F88E3854FCAA /* ForgotPasswordSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +534,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8BE47ECB54A2C2F1E2BED32 /* ForgotPasswordSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +686,7 @@
 				DEVELOPMENT_TEAM = LZ49D9YF4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SuperStoreApp;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to securely refresh your authentication tokens";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -696,6 +721,7 @@
 				DEVELOPMENT_TEAM = LZ49D9YF4U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = SuperStoreApp;
 				INFOPLIST_KEY_NSFaceIDUsageDescription = "We use Face ID to securely refresh your authentication tokens";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
