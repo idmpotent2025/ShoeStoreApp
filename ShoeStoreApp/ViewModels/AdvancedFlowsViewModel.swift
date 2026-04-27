@@ -88,12 +88,26 @@ class AdvancedFlowsViewModel: ObservableObject {
 
     // MARK: - Native2WebSSO
 
+    /// Initiates Native-to-Web SSO flow by generating a session URL with token
+    ///
+    /// To use with real Auth0 authentication:
+    /// 1. Inject AuthService into this ViewModel
+    /// 2. Check if user is authenticated: authService.isAuthenticated
+    /// 3. Use actual token: let sessionToken = authService.accessToken ?? authService.idToken
+    /// 4. The webapp will validate the JWT signature using Auth0 JWKS
     func initiateNative2WebSSO() {
         isLoading = true
         errorMessage = nil
 
+        // TODO: Replace with actual access token from AuthService
+        // let sessionToken = authService.accessToken ?? authService.idToken ?? ""
+        // For demo purposes, using UUID as placeholder
         let sessionToken = UUID().uuidString
-        guard let webURL = URL(string: "https://demo.identityarchitect.app/portal") else {
+
+        // Updated URL to match new webapp structure
+        // Change this to your Vercel deployment URL in production
+        let baseURL = "https://demo.identityarchitect.app" // or "http://localhost:3000" for local testing
+        guard let webURL = URL(string: "\(baseURL)/flows/native2web/sso?sessionToken=\(sessionToken)") else {
             errorMessage = "Invalid URL"
             isLoading = false
             return

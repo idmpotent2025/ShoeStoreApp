@@ -377,8 +377,10 @@ struct Native2WebSSOSheet: View {
 
                             if ssoSession.isActive {
                                 Button(action: {
-                                    // In a real implementation, this would open ASWebAuthenticationSession
-                                    viewModel.endSSOSession()
+                                    // Open the web portal with SSO session token
+                                    if UIApplication.shared.canOpenURL(ssoSession.webPortalURL) {
+                                        UIApplication.shared.open(ssoSession.webPortalURL)
+                                    }
                                 }) {
                                     HStack {
                                         Image(systemName: "safari.fill")
@@ -391,6 +393,22 @@ struct Native2WebSSOSheet: View {
                                     .foregroundColor(.white)
                                     .cornerRadius(12)
                                 }
+
+                                Button(action: {
+                                    viewModel.endSSOSession()
+                                }) {
+                                    HStack {
+                                        Image(systemName: "xmark.circle.fill")
+                                        Text("End Session")
+                                            .fontWeight(.semibold)
+                                    }
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(Color.red.opacity(0.1))
+                                    .foregroundColor(.red)
+                                    .cornerRadius(12)
+                                }
+                                .padding(.top, 8)
                             } else {
                                 Text("Session ended")
                                     .foregroundColor(.gray)
